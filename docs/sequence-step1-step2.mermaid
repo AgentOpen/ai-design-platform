@@ -1,0 +1,31 @@
+sequenceDiagram
+    participant User
+    participant Step1 as Step1FloorPlan
+    participant Store as useAppStore
+    participant Mock as defaultFloorPlan.json
+    participant Step2 as Step2Modeling3D
+    participant Scene as Scene3D
+
+    User->>Step1: 进入 Step1
+    Step1->>Mock: 加载 defaultFloorPlan.json
+    Mock-->>Step1: 返回户型数据
+    Step1->>Store: setFloorPlan(plan)
+    Step1->>Step1: 渲染 FloorPlan2D (Canvas)
+    User->>Step1: 点击「上传户型图」
+    Step1->>User: Toast "Demo 版本暂不支持"
+    User->>Step1: 点击「下一步」
+    Step1->>Store: setCurrentStep(2)
+    
+    User->>Step2: 进入 Step2
+    Step2->>Store: 读取 floorPlan
+    Step2->>Scene: 传入 floorPlan 渲染 3D
+    Scene->>Scene: WallMesh 渲染墙体
+    Scene->>Scene: DoorMesh 渲染门
+    Scene->>Scene: WindowMesh 渲染窗
+    Scene->>Scene: FloorMesh 渲染地面
+    Scene->>Scene: CeilingMesh 渲染天花板
+    User->>Scene: 旋转/缩放查看
+    User->>Step2: 切换 2D/3D
+    Step2->>Store: setViewMode(mode)
+    User->>Step2: 点击「下一步」
+    Step2->>Store: setCurrentStep(3)

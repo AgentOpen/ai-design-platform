@@ -1,0 +1,43 @@
+sequenceDiagram
+    participant User
+    participant Step4 as Step4Edit
+    participant Store as useAppStore
+    participant Scene as Scene3D
+    participant Drag as FurnitureDragControls
+    participant Collision as collisionService
+    participant Panel as ProductLibraryPanel
+
+    User->>Step4: 进入 Step4
+    Step4->>Scene: 渲染 3D 编辑模式（家具可交互）
+    Step4->>Panel: 显示左侧产品库面板
+    
+    Note over User,Scene: 拖拽移动家具
+    User->>Drag: onPointerDown 选中家具
+    Drag->>Store: setSelectedFurnitureId(id)
+    Drag->>Drag: onPointerMove → raycaster 与地面求交
+    Drag->>Collision: checkAABB(movedFurniture, allFurniture)
+    alt 碰撞
+        Collision-->>Drag: isColliding=true
+        Drag->>Scene: 红色高亮 + 回弹原位
+    else 无碰撞
+        Collision-->>Drag: isColliding=false
+        Drag->>Store: updateFurniturePosition(id, newPos)
+        Drag->>Drag: 网格吸附 (snap to grid 0.1m)
+    end
+    
+    Note over User,Scene: 旋转家具
+    User->>Drag: 按 R 键
+    Drag->>Store: updateFurnitureRotation(id, rotY+90)
+    
+    Note over User,Scene: 删除家具
+    User->>Scene: 右键家具 → 弹出菜单
+    User->>Scene: 点击「删除」
+    Scene->>Store: removeFurniture(id)
+    
+    Note over User,Panel: 从产品库添加
+    User->>Panel: 搜索/筛选产品
+    User->>Panel: 拖拽产品到 3D 场景
+    Panel->>Store: addFurniture(newItem)
+    
+    User->>Step4: 点击「下一步」
+    Step4->>Store: setCurrentStep(5)

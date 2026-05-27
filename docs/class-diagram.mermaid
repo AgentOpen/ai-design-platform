@@ -1,0 +1,192 @@
+classDiagram
+    class Point2D {
+        +number x
+        +number y
+    }
+
+    class Point3D {
+        +number x
+        +number y
+        +number z
+    }
+
+    class Size3D {
+        +number width
+        +number depth
+        +number height
+    }
+
+    class Wall {
+        +string id
+        +Point2D start
+        +Point2D end
+        +number thickness
+        +number height
+    }
+
+    class Door {
+        +string id
+        +string wallId
+        +number position
+        +number width
+        +number height
+        +string type
+        +string direction
+    }
+
+    class Window {
+        +string id
+        +string wallId
+        +number position
+        +number width
+        +number height
+        +number sillHeight
+    }
+
+    class Room {
+        +string id
+        +string name
+        +string type
+        +Point2D[] floorPolygon
+        +number area
+        +string floorMaterial
+    }
+
+    class FloorPlan {
+        +string id
+        +string name
+        +number totalArea
+        +number ceilingHeight
+        +string unit
+        +Point2D origin
+        +Wall[] walls
+        +Door[] doors
+        +Window[] windows
+        +Room[] rooms
+    }
+
+    class FurnitureInstance {
+        +string id
+        +string roomId
+        +string skuId
+        +string name
+        +Point3D position
+        +Point3D rotation
+        +Size3D size
+    }
+
+    class LayoutScheme {
+        +string id
+        +string name
+        +string style
+        +string floorPlanId
+        +FurnitureInstance[] furniture
+    }
+
+    class ProductSKU {
+        +string id
+        +string name
+        +string category
+        +string subCategory
+        +string brand
+        +string[] style
+        +Size3D size
+        +string color
+        +string material
+        +number price
+        +string unit
+        +string imageUrl
+        +string modelColor
+    }
+
+    class QuotationItem {
+        +string furnitureId
+        +string skuId
+        +string name
+        +number quantity
+        +number unitPrice
+        +number subtotal
+    }
+
+    class QuotationRoom {
+        +string roomId
+        +string roomName
+        +QuotationItem[] items
+        +number roomSubtotal
+    }
+
+    class Quotation {
+        +string id
+        +string name
+        +string layoutSchemeId
+        +string createdAt
+        +number laborRate
+        +number managementFeeRate
+        +number designFeeRate
+        +QuotationRoom[] rooms
+        +QuotationSummary summary
+    }
+
+    class QuotationSummary {
+        +number materialTotal
+        +number laborFee
+        +number managementFee
+        +number designFee
+        +number grandTotal
+    }
+
+    class RenderStyle {
+        +string id
+        +string name
+        +string imageUrl
+    }
+
+    class AppStore {
+        +number currentStep
+        +FloorPlan floorPlan
+        +LayoutScheme currentLayout
+        +FurnitureInstance[] furniture
+        +ProductSKU[] productCatalog
+        +string selectedFurnitureId
+        +boolean showCeiling
+        +string viewMode
+        +Quotation quotation
+        +RenderStyle[] renderStyles
+        +string selectedRenderStyle
+        +string renderImageUrl
+        +boolean isLoading
+        +number loadingProgress
+        +string loadingText
+        +setCurrentStep(step) void
+        +setFloorPlan(plan) void
+        +setCurrentLayout(layout) void
+        +addFurniture(item) void
+        +updateFurniturePosition(id, pos) void
+        +updateFurnitureRotation(id, rot) void
+        +removeFurniture(id) void
+        +replaceFurniture(id, newSku) void
+        +setSelectedFurnitureId(id) void
+        +setShowCeiling(show) void
+        +setViewMode(mode) void
+        +setQuotation(q) void
+        +setLoading(loading) void
+        +setLoadingProgress(progress) void
+        +setLoadingText(text) void
+        +setRenderImageUrl(url) void
+        +setSelectedRenderStyle(style) void
+    }
+
+    FloorPlan "1" *-- "many" Wall : walls
+    FloorPlan "1" *-- "many" Door : doors
+    FloorPlan "1" *-- "many" Window : windows
+    FloorPlan "1" *-- "many" Room : rooms
+    LayoutScheme "1" *-- "many" FurnitureInstance : furniture
+    Quotation "1" *-- "many" QuotationRoom : rooms
+    QuotationRoom "1" *-- "many" QuotationItem : items
+    Quotation "1" *-- "1" QuotationSummary : summary
+    AppStore "1" o-- "1" FloorPlan : floorPlan
+    AppStore "1" o-- "1" LayoutScheme : currentLayout
+    AppStore "1" o-- "many" FurnitureInstance : furniture
+    AppStore "1" o-- "many" ProductSKU : productCatalog
+    AppStore "1" o-- "0..1" Quotation : quotation
+    FurnitureInstance ..> ProductSKU : references via skuId

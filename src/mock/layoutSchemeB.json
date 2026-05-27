@@ -1,0 +1,152 @@
+{
+  "id": "layout_scheme_b",
+  "name": "方案 B · 紧凑实用",
+  "style": "modern_practical",
+  "floorPlanId": "floorplan_default_001",
+  "furniture": [
+    {
+      "id": "furn_b_01",
+      "roomId": "room_living",
+      "skuId": "sku_sofa_002",
+      "name": "L型转角沙发",
+      "position": { "x": 0.8, "y": 0.5, "z": 0 },
+      "rotation": { "x": 0, "y": 0, "z": 0 },
+      "size": { "width": 2.6, "depth": 1.6, "height": 0.85 }
+    },
+    {
+      "id": "furn_b_02",
+      "roomId": "room_living",
+      "skuId": "sku_tvstand_002",
+      "name": "悬挂式电视柜",
+      "position": { "x": 3.0, "y": 3.3, "z": 0 },
+      "rotation": { "x": 0, "y": 0, "z": 0 },
+      "size": { "width": 2.0, "depth": 0.35, "height": 0.35 }
+    },
+    {
+      "id": "furn_b_03",
+      "roomId": "room_living",
+      "skuId": "sku_coffeetable_002",
+      "name": "升降茶几",
+      "position": { "x": 2.5, "y": 1.8, "z": 0 },
+      "rotation": { "x": 0, "y": 0, "z": 0 },
+      "size": { "width": 1.1, "depth": 0.65, "height": 0.5 }
+    },
+    {
+      "id": "furn_b_04",
+      "roomId": "room_living",
+      "skuId": "sku_diningtable_001",
+      "name": "4人餐桌",
+      "position": { "x": 4.5, "y": 1.8, "z": 0 },
+      "rotation": { "x": 0, "y": 0, "z": 0 },
+      "size": { "width": 1.2, "depth": 0.8, "height": 0.75 }
+    },
+    {
+      "id": "furn_b_05",
+      "roomId": "room_living",
+      "skuId": "sku_diningchair_001",
+      "name": "餐椅×4",
+      "position": { "x": 4.5, "y": 1.2, "z": 0 },
+      "rotation": { "x": 0, "y": 0, "z": 0 },
+      "size": { "width": 0.45, "depth": 0.45, "height": 0.85 }
+    },
+    {
+      "id": "furn_b_06",
+      "roomId": "room_master",
+      "skuId": "sku_bed_double_002",
+      "name": "1.8m 储物床",
+      "position": { "x": 2.0, "y": 5.0, "z": 0 },
+      "rotation": { "x": 0, "y": 0, "z": 0 },
+      "size": { "width": 2.1, "depth": 1.9, "height": 0.4 }
+    },
+    {
+      "id": "furn_b_07",
+      "roomId": "room_master",
+      "skuId": "sku_nightstand_002",
+      "name": "床头柜×2",
+      "position": { "x": 0.5, "y": 5.0, "z": 0 },
+      "rotation": { "x": 0, "y": 0, "z": 0 },
+      "size": { "width": 0.4, "depth": 0.35, "height": 0.5 }
+    },
+    {
+      "id": "furn_b_08",
+      "roomId": "room_master",
+      "skuId": "sku_dresser_001",
+      "name": "梳妆台",
+      "position": { "x": 3.5, "y": 4.0, "z": 0 },
+      "rotation": { "x": 0, "y": 90, "z": 0 },
+      "size": { "width": 0.8, "depth": 0.4, "height": 0.75 }
+    },
+    {
+      "id": "furn_b_09",
+      "roomId": "room_master",
+      "skuId": "sku_wardrobe_001",
+      "name": "推拉门衣柜",
+      "position": { "x": 0.5, "y": 4.0, "z": 0 },
+      "rotation": { "x": 0, "y": 90, "z": 0 },
+      "size": { "width": 0.6, "depth": 1.8, "height": 2.2 }
+    },
+    {
+      "id": "furn_b_10",
+      "roomId": "room_second",
+      "skuId": "sku_bed_single_002",
+      "name": "1.2m 单人床",
+      "position": { "x": 0.8, "y": 7.5, "z": 0 },
+      "rotation": { "x": 0, "y": 0, "z": 0 },
+      "size": { "width": 1.2, "depth": 2.0, "height": 0.45 }
+    },
+    {
+      "id": "furn_b_11",
+      "roomId": "room_second",
+      "skuId": "sku_desk_002",
+      "name": "升降书桌",
+      "position": { "x": 3.2, "y": 7.0, "z": 0 },
+      "rotation": { "x": 0, "y": 0, "z": 0 },
+      "size": { "width": 1.0, "depth": 0.5, "height": 0.75 }
+    },
+    {
+      "id": "furn_b_12",
+      "roomId": "room_second",
+      "skuId": "sku_wardrobe_003",
+      "name": "三门衣柜",
+      "position": { "x": 0.5, "y": 6.8, "z": 0 },
+      "rotation": { "x": 0, "y": 90, "z": 0 },
+      "size": { "width": 0.55, "depth": 1.5, "height": 2.0 }
+    },
+    {
+      "id": "furn_b_13",
+      "roomId": "room_kitchen",
+      "skuId": "sku_cabinet_002",
+      "name": "一字型橱柜",
+      "position": { "x": 4.2, "y": 3.8, "z": 0 },
+      "rotation": { "x": 0, "y": 0, "z": 0 },
+      "size": { "width": 1.6, "depth": 0.6, "height": 0.85 }
+    },
+    {
+      "id": "furn_b_14",
+      "roomId": "room_bathroom",
+      "skuId": "sku_toilet_002",
+      "name": "普通马桶",
+      "position": { "x": 4.5, "y": 7.8, "z": 0 },
+      "rotation": { "x": 0, "y": 0, "z": 0 },
+      "size": { "width": 0.38, "depth": 0.65, "height": 0.4 }
+    },
+    {
+      "id": "furn_b_15",
+      "roomId": "room_bathroom",
+      "skuId": "sku_washbasin_002",
+      "name": "立柱盆",
+      "position": { "x": 5.4, "y": 6.6, "z": 0 },
+      "rotation": { "x": 0, "y": 90, "z": 0 },
+      "size": { "width": 0.45, "depth": 0.55, "height": 0.82 }
+    },
+    {
+      "id": "furn_b_16",
+      "roomId": "room_balcony",
+      "skuId": "sku_washing_001",
+      "name": "滚筒洗衣机",
+      "position": { "x": 6.3, "y": 0.5, "z": 0 },
+      "rotation": { "x": 0, "y": 0, "z": 0 },
+      "size": { "width": 0.6, "depth": 0.6, "height": 0.85 }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+sequenceDiagram
+    participant User
+    participant Step7 as Step7Quotation
+    participant Store as useAppStore
+    participant Quote as quotationService
+
+    User->>Step7: 进入 Step7
+    Step7->>Store: 读取 furniture[] + productCatalog[]
+    Step7->>Quote: calculateQuotation(furniture, productCatalog)
+    Quote->>Quote: 按 roomId 分组家具
+    Quote->>Quote: 匹配 SKU 价格
+    Quote->>Quote: 计算每个房间小计
+    Quote->>Quote: 材料总价 = sum(roomSubtotal)
+    Quote->>Quote: 人工费 = 材料总价 × 15%
+    Quote->>Quote: 管理费 = 材料总价 × 8%
+    Quote->>Quote: 设计费 = 材料总价 × 5%
+    Quote->>Quote: 总价 = sum(all)
+    Quote-->>Step7: 返回 Quotation 对象
+    Step7->>Step7: 渲染按房间分组的 BOM 表
+    Step7->>Step7: 渲染底部汇总
+    
+    User->>Step7: 点击「返回编辑」
+    Step7->>Store: setCurrentStep(4)
+    
+    User->>Step7: 点击「重新开始」
+    Step7->>Store: 重置所有状态 + setCurrentStep(1)

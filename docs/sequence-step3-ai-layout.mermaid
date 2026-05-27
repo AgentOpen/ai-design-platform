@@ -1,0 +1,41 @@
+sequenceDiagram
+    participant User
+    participant Step3 as Step3AILayout
+    participant Sim as simulationService
+    participant Store as useAppStore
+    participant MockA as layoutSchemeA.json
+    participant MockB as layoutSchemeB.json
+    participant Scene as Scene3D
+
+    User->>Step3: 进入 Step3
+    Step3->>Step3: 显示风格选择卡片（默认「现代简约」）
+    User->>Step3: 点击「生成布局」
+    Step3->>Store: setLoading(true)
+    Step3->>Sim: simulateAILayout(style)
+    Sim->>Store: setLoadingProgress(0), setLoadingText("分析户型...")
+    Sim->>Sim: simulateProgress(0, 30, 1000)
+    Sim->>Store: setLoadingProgress(30), setLoadingText("规划空间...")
+    Sim->>Sim: simulateProgress(30, 70, 1500)
+    Sim->>Store: setLoadingProgress(70), setLoadingText("摆放家具...")
+    Sim->>Sim: simulateProgress(70, 95, 800)
+    Sim->>Store: setLoadingProgress(95), setLoadingText("优化布局...")
+    Sim->>Sim: simulateProgress(95, 100, 500)
+    Sim->>Store: setLoading(false)
+    
+    Sim->>MockA: 加载布局方案 A
+    MockA-->>Sim: 返回方案 A 数据
+    Sim->>Store: setCurrentLayout(schemeA)
+    Sim->>Store: setFurniture(schemeA.furniture)
+    
+    loop 逐个家具出现
+        Sim->>Scene: FurnitureMesh 渐入动画 (200ms/个)
+    end
+    
+    User->>Step3: 切换方案 B
+    Step3->>MockB: 加载布局方案 B
+    MockB-->>Step3: 返回方案 B 数据
+    Step3->>Store: setCurrentLayout(schemeB)
+    Step3->>Store: setFurniture(schemeB.furniture)
+    
+    User->>Step3: 点击「下一步」
+    Step3->>Store: setCurrentStep(4)

@@ -1,0 +1,91 @@
+{
+  "id": "quotation_default_a",
+  "name": "全屋报价单 — 方案 A",
+  "layoutSchemeId": "layout_scheme_a",
+  "createdAt": "2025-01-15T10:00:00Z",
+  "laborRate": 0.15,
+  "managementFeeRate": 0.08,
+  "designFeeRate": 0.05,
+  "rooms": [
+    {
+      "roomId": "room_living",
+      "roomName": "客厅",
+      "items": [
+        { "furnitureId": "furn_a_01", "skuId": "sku_sofa_001", "name": "三人位布艺沙发", "quantity": 1, "unitPrice": 3299, "subtotal": 3299 },
+        { "furnitureId": "furn_a_02", "skuId": "sku_tvstand_001", "name": "现代电视柜", "quantity": 1, "unitPrice": 1299, "subtotal": 1299 },
+        { "furnitureId": "furn_a_03", "skuId": "sku_coffeetable_001", "name": "简约茶几", "quantity": 1, "unitPrice": 699, "subtotal": 699 },
+        { "furnitureId": "furn_a_04", "skuId": "rug_001", "name": "几何图案地毯", "quantity": 1, "unitPrice": 399, "subtotal": 399 },
+        { "furnitureId": "furn_a_05", "skuId": "sku_floorlamp_001", "name": "落地灯", "quantity": 1, "unitPrice": 499, "subtotal": 499 },
+        { "furnitureId": "furn_a_06", "skuId": "sku_bookshelf_001", "name": "开放式书架", "quantity": 1, "unitPrice": 899, "subtotal": 899 },
+        { "furnitureId": "furn_a_07", "skuId": "sku_ceilinglamp_001", "name": "客厅吸顶灯", "quantity": 1, "unitPrice": 599, "subtotal": 599 },
+        { "furnitureId": "furn_a_08", "skuId": "sku_curtain_001", "name": "遮光窗帘", "quantity": 1, "unitPrice": 899, "subtotal": 899 }
+      ],
+      "roomSubtotal": 8592
+    },
+    {
+      "roomId": "room_master",
+      "roomName": "主卧",
+      "items": [
+        { "furnitureId": "furn_a_07", "skuId": "sku_bed_double_001", "name": "1.8m 双人床", "quantity": 1, "unitPrice": 2599, "subtotal": 2599 },
+        { "furnitureId": "furn_a_08", "skuId": "sku_nightstand_001", "name": "床头柜", "quantity": 1, "unitPrice": 399, "subtotal": 399 },
+        { "furnitureId": "furn_a_09", "skuId": "sku_wardrobe_001", "name": "推拉门衣柜", "quantity": 1, "unitPrice": 4599, "subtotal": 4599 },
+        { "furnitureId": "furn_a_10", "skuId": "sku_desklamp_001", "name": "台灯", "quantity": 1, "unitPrice": 199, "subtotal": 199 },
+        { "furnitureId": "furn_a_11", "skuId": "sku_mattress_001", "name": "1.8m 乳胶床垫", "quantity": 1, "unitPrice": 3299, "subtotal": 3299 },
+        { "furnitureId": "furn_a_12", "skuId": "sku_curtain_002", "name": "纱帘", "quantity": 1, "unitPrice": 399, "subtotal": 399 }
+      ],
+      "roomSubtotal": 11494
+    },
+    {
+      "roomId": "room_second",
+      "roomName": "次卧",
+      "items": [
+        { "furnitureId": "furn_a_11", "skuId": "sku_bed_single_001", "name": "1.5m 单人床", "quantity": 1, "unitPrice": 1599, "subtotal": 1599 },
+        { "furnitureId": "furn_a_12", "skuId": "sku_desk_001", "name": "书桌", "quantity": 1, "unitPrice": 599, "subtotal": 599 },
+        { "furnitureId": "furn_a_13", "skuId": "sku_chair_001", "name": "人体工学椅", "quantity": 1, "unitPrice": 1899, "subtotal": 1899 },
+        { "furnitureId": "furn_a_14", "skuId": "sku_wardrobe_002", "name": "双门衣柜", "quantity": 1, "unitPrice": 2899, "subtotal": 2899 },
+        { "furnitureId": "furn_a_15", "skuId": "sku_mattress_002", "name": "1.5m 记忆棉床垫", "quantity": 1, "unitPrice": 2599, "subtotal": 2599 }
+      ],
+      "roomSubtotal": 9595
+    },
+    {
+      "roomId": "room_kitchen",
+      "roomName": "厨房",
+      "items": [
+        { "furnitureId": "furn_a_15", "skuId": "sku_cabinet_001", "name": "L型橱柜", "quantity": 1, "unitPrice": 3999, "subtotal": 3999 },
+        { "furnitureId": "furn_a_16", "skuId": "sku_fridge_001", "name": "双门冰箱", "quantity": 1, "unitPrice": 3299, "subtotal": 3299 },
+        { "furnitureId": "furn_a_17", "skuId": "sku_kitchentray_001", "name": "厨房置物架", "quantity": 1, "unitPrice": 399, "subtotal": 399 }
+      ],
+      "roomSubtotal": 7697
+    },
+    {
+      "roomId": "room_bathroom",
+      "roomName": "卫生间",
+      "items": [
+        { "furnitureId": "furn_a_17", "skuId": "sku_toilet_001", "name": "智能马桶", "quantity": 1, "unitPrice": 3999, "subtotal": 3999 },
+        { "furnitureId": "furn_a_18", "skuId": "sku_washbasin_001", "name": "浴室柜", "quantity": 1, "unitPrice": 1899, "subtotal": 1899 },
+        { "furnitureId": "furn_a_19", "skuId": "sku_shower_001", "name": "淋浴房", "quantity": 1, "unitPrice": 2599, "subtotal": 2599 },
+        { "furnitureId": "furn_a_20", "skuId": "sku_heater_001", "name": "电热水器", "quantity": 1, "unitPrice": 1599, "subtotal": 1599 },
+        { "furnitureId": "furn_a_21", "skuId": "sku_towelrack_001", "name": "毛巾架", "quantity": 1, "unitPrice": 299, "subtotal": 299 },
+        { "furnitureId": "furn_a_22", "skuId": "sku_mirror_001", "name": "智能镜柜", "quantity": 1, "unitPrice": 1299, "subtotal": 1299 }
+      ],
+      "roomSubtotal": 11694
+    },
+    {
+      "roomId": "room_balcony",
+      "roomName": "阳台",
+      "items": [
+        { "furnitureId": "furn_a_20", "skuId": "sku_washing_001", "name": "滚筒洗衣机", "quantity": 1, "unitPrice": 2499, "subtotal": 2499 },
+        { "furnitureId": "furn_a_21", "skuId": "sku_balconychair_001", "name": "休闲椅", "quantity": 1, "unitPrice": 699, "subtotal": 699 },
+        { "furnitureId": "furn_a_22", "skuId": "sku_balconytable_001", "name": "小圆桌", "quantity": 1, "unitPrice": 399, "subtotal": 399 }
+      ],
+      "roomSubtotal": 3597
+    }
+  ],
+  "summary": {
+    "materialTotal": 52669,
+    "laborFee": 7900,
+    "managementFee": 4214,
+    "designFee": 2633,
+    "grandTotal": 67416
+  }
+}
