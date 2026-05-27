@@ -5,6 +5,7 @@ import { fileURLToPath } from 'url';
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
 export default defineConfig({
+  base: '/ai-design-platform/',
   plugins: [react()],
   resolve: {
     alias: {
@@ -15,4 +16,3 @@ export default defineConfig({
     outDir: 'docs',
   },
 });
-
